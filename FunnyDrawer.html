@@ -5,12 +5,15 @@
 </head>
 <body>
   <div id="toolbar">
-    <h1>GDraw</h1>
+  <div id="title">
+    <h1>Funny</h1>
+    <h2>Drawer</h2>
+  </div>
 
     <div id="tools">
       <button type="button" id="pencil"> PENCIL </button>
-      <button type="button" id="square"> SQUARE </button>
-      <button type="button" id="circle"> CIRCLE </button>
+      <button type="button" id="square" disabled> SQUARE </button>
+      <button type="button" id="circle" disabled> CIRCLE </button>
 
       <select id="colors" size="5">
         <option value="#FFFFFF" style="background-color:#FFF;">#FFFFFF</option>
@@ -36,9 +39,10 @@ body{
   font-family: monospace;
 }
 
-h1,h2,h3,h4,h5,h6,h7 {
-  margin:1em;
+#title{
+  margin: 1em;
 }
+
 
 button,input,select {
   font-family: monospace;
