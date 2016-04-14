@@ -1,0 +1,113 @@
+<DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="utf-8"/>
+</head>
+<body>
+  <div id="toolbar">
+    <h1>GDraw</h1>
+
+    <div id="tools">
+      <button type="button" id="pencil"> PENCIL </button>
+      <button type="button" id="square"> SQUARE </button>
+      <button type="button" id="circle"> CIRCLE </button>
+
+      <select id="colors" size="5">
+        <option value="#FFFFFF" style="background-color:#FFF;">#FFFFFF</option>
+        <option value="#000000" style="background-color:#000; color:#FFF">#000000</option>
+        <option value="#FF0000" style="background-color:#F00;">#FF0000</option>
+        <option value="#00FF00" style="background-color:#0F0;">#00FF00</option>
+        <option value="#0000FF" style="background-color:#00F;">#0000FF</option>
+      </select>
+
+      <p id="cursorPosition"></p>
+
+    </div>
+
+  </div>
+  <canvas id="canvas"/>
+</body>
+
+<style>
+body{
+  border:0;
+  margin:0;
+  padding:0;
+  font-family: monospace;
+}
+
+h1,h2,h3,h4,h5,h6,h7 {
+  margin:1em;
+}
+
+button,input,select {
+  font-family: monospace;
+  margin: 1em;
+}
+
+#toolbar{
+  width: 10%;
+  height: 100%;
+  background-color: #AAA;
+  float:left;
+}
+
+#canvas{
+  width: 90%;
+  height: 100%;
+  background-color: #FFF;
+  float:left;
+}
+
+}
+</style>
+<script type="text/javascript">
+
+var canvas = document.getElementById('canvas');
+var c2d = canvas.getContext("2d");
+
+var colors = document.getElementById('colors');
+
+var currentColor;
+
+colors.onchange = function(e){
+  currentColor = colors.value;
+  c2d.fillStyle=currentColor;
+}
+
+resizeCanvas();
+
+window.addEventListener('resize',resizeCanvas,false);
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth*0.9;
+  canvas.height = window.innerHeight;
+}
+
+var shouldDraw = false;
+
+canvas.onmousedown = function(e){
+  shouldDraw = true;
+};
+
+canvas.onmouseup = function(e){
+  shouldDraw = false;
+}
+
+canvas.onmousemove = function(e){
+  if(!shouldDraw){return;}
+
+  var x = e.offsetX;
+  var y = e.offsetY;
+
+
+
+
+  c2d.fillRect(x,y,5,5);
+}
+
+
+</script>
+
+
+</html>
