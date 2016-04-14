@@ -5,7 +5,7 @@ It's just for fun!
 
 # Usage
 
-Just open FunnyDrawer.html on your browser (browser is that thing you use to access facebook, or something like), or [click here](https://rawgit.com/gabrsar/FunnyDrawer/master/FunnyDrawer.html)
+Just open FunnyDrawer.html on your browser, or [click here](https://rawgit.com/gabrsar/FunnyDrawer/master/FunnyDrawer.html)
 
 # Why?
 Why not?
